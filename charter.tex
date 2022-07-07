@@ -138,8 +138,8 @@ La traducción del modelo genera los siguientes inconvenientes:
 
 \begin{itemize}
   \item Duplicación de tareas.
-  \item Dificultad para depurar: se torna dificil determinar si un
-    comportamiento erroneo es producto del diseño del modelo o su traducción al
+  \item Dificultad para depurar: se torna difícil determinar si un
+    comportamiento erróneo es producto del diseño del modelo o su traducción al
     lenguaje C.
   \item Baja de confiabilidad: la traducción del código es una fuente de
     posibles errores en el sistema.
@@ -150,7 +150,7 @@ utilice el algoritmo hecho en Python sin traducir. Esto tendría el beneficio
 adicional de aliviar la demanda de programadores C/C++ y buscar personal en una
 población mayor.
 
-El proyecto se realizará en un Sistem on chip (SoC) Zynq-7000 del fabricante
+El proyecto se realizará en un \emph{System on chip} (SoC) Zynq-7000 del fabricante
 AMD/Xilinx y tendrá los siguientes componentes:
 
 \begin{itemize}
@@ -187,7 +187,7 @@ simplificado del sistema propuesto.
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	  & Puesto \\ \hline
-Auspiciante   & Celeste Musso     & \empclientename & Jefa del DISW \\ \hline
+Auspíciate   & Celeste Musso     & \empclientename & Jefa del DISW \\ \hline
 Cliente       & \clientename      & \empclientename & Ingeniero de software \\ \hline
 Impulsor      & Maximiliano Graf  & \empclientename & Líder de equipo \\ \hline
 Responsable   & \authorname       & FIUBA        	  & Alumno \\ \hline
@@ -230,41 +230,37 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+A continuación se enumeran los requerimientos del proyecto:
 
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
+      \item El sistema se debe implementar en un SoC de Xilinx.
+      \item El sistema debe generar un flujo de datos de radar.
+      \item El generador de datos debe ser un esclavo AXI en la lógica programable.
+			\item La generación de datos debe ser configurable.
+			\item El sistema debe procesar los datos y generar mensajes ASTERIX.
+      \item El procesador de datos se debe implementar en Python dentro de la
+        Unidad de procesamiento de aplicaciones.
+      \item El procesador debe correr como servicio dentro del sistema
+        operativo.
+      \item Se debe crear una distribución de Linux embebido.
+			\item Los mensajes ASTERIX se deben transmitir por protocolo ZMQ.
+			\item El sistema debe generar datos de telemetría que indiquen su estado
+        de funcionamiento.
+			\item La telemetría se debe trasmitir por protocolo MQTT.
+			\item El sistema debe presentar una interfaz web para ajustar la
+        configuración.
+      \item Se debe poder visualizar los mensajes ASTERIX y de telemetría.
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Se debe generar un informe de rendimiento del procesador de datos implementado.
+			\item Se debe crear un manual de uso para el esclavo AXI.
+      \item Se debe crear un manual de uso para el servicio procesador de datos.
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+	\item Se debe proveer una interfaz web para supervisar y configurar el sistema.
 \end{enumerate}
-
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
@@ -280,20 +276,16 @@ Se debe indicar explícitamente el criterio para calcular los \textit{story poin
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Manual de usuario del generador de datos.
+	\item Manual de usuario del servicio de procesamiento de datos.
+	\item Código fuente del generador de datos.
+	\item Código fuente del servicio de procesamiento de datos.
+	\item Informe de rendimiento del servicio de procesamiento de datos.
 \end{itemize}
 
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
