@@ -265,13 +265,48 @@ A continuación se enumeran los requerimientos del proyecto:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+Las historias de usuario reciben una calificación numérica que refleja la
+complejidad de su implementación.
+A continuación se detallan los valores posibles:
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+\begin{itemize}
+\item 1 punto: la historia demanda un esfuerzo trivial para satisfacerla.
+\item 2 puntos: la historia requiere de conocimientos profundos en una
+  tecnología particular.
+\item 4 puntos: la historia necesita de conocimientos profundos en más de una tecnología.
+\item 8 puntos: la historia demanda múltiples tecnologías y debe cumplir con
+  requerimientos de rendimiento.
+\item 16 puntos: la historia demanda múltiples tecnologías y debe funcionar en
+  tiempo real.
+\end{itemize}
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+A continuación se enumeran las historias de usuario:
+
+\begin{itemize}
+  \item
+    \begin{itemize}
+      \item Descripción: como arquitecto de proyectos quiero una interfaz gráfica que me permita
+        evaluar el rendimiento del modelo en el sistema embebido.
+      \item 8 \emph{History points}: la historia de usuario necesita de
+        conocimientos de Python, protocolos ZMQ y HTTP y además se necesita crear
+        una página web dentro del sistema embebido. Finalmente, se debe medir el
+        rendimiento del sistema.
+    \end{itemize}
+  \item
+    \begin{itemize}
+      \item Descripción: como desarrollador de la \emph{Radar Computer} necesito obtener
+        telemetría MQTT para actualizar el estado del radar.
+      \item 4 \emph{History points}: la historia requiere conocimientos de
+        programación concurrente en Python y el manejo del protocolo MQTT.
+    \end{itemize}
+  \item
+    \begin{itemize}
+      \item Descripción: como desarrollador de consolas de radar quiero obtener mensajes en
+        formato ASTERIX para poder representar las novedades en campo.
+      \item 4 \emph{History points}: se necesitan conocimientos de ZMQ, ASTERIX
+        y Python.
+    \end{itemize}
+\end{itemize}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
