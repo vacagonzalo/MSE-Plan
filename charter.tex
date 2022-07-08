@@ -441,16 +441,7 @@ En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realiza
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-\end{consigna}
+A continuación se detallan los costos previstos para del proyecto:
 
 \begin{table}[htpb]
 \centering
@@ -463,24 +454,24 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  Arty Z7&
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{USD 200} &
+  \multicolumn{1}{c|}{USD 200} \\ \hline
+%   &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} &
+%  \multicolumn{1}{c|}{} \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{USD 200} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -488,23 +479,24 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+  \multicolumn{1}{|l|}{Costos de aduana} &
+  1 &
+  USD 100 &
+  USD 100
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
+%\multicolumn{1}{|l|}{} &
+%   &
+%   &
+%   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{USD 100} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
+  USD 300 \\ \hline
 \end{tabularx}%
 \end{table}
 
@@ -512,27 +504,44 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
- 
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+a) A continuación se identifican los riesgos previstos en el proyecto:
+
+Riesgo 1: demoras en la adquisición del hardware.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+\item Severidad (4): no es posible realizar pruebas de rendimiento sin tener el
+  hardware real, sin embargo es posible realizar el desarrollo del proyecto.
+\item Probabilidad de ocurrencia (7): es frecuente tener problemas para realizar
+  importaciones en la República Argentina. 
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: sin acceso al algoritmo desarrollado por modelística.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+\item Severidad (10): sin el modelo no es posible realizar el proyecto.
+\item Ocurrencia (1): el proyecto tiene el apoyo de la jefa del departamento de
+  ingeniería de software.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: sin acceso a una colección de datos de radar.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+\item Severidad (7): sin datos reales de radar se pierde la posibilidad
+  de realizar pruebas que arrojen resultados útiles.
+\item Ocurrencia (1): el proyecto tiene el apoyo de la jefa del departamento de
+  ingeniería de software.
+\end{itemize}
+
+Riesgo 4: sin horas para realizar el proyecto durante el horario laboral.
+\begin{itemize}
+\item Severidad (5): el proyecto contempla el uso de horas dentro del horario
+  laboral para cumplir con la fecha de entrega.
+\item Ocurrencia (5): las obligaciones contractuales de la empresa pueden forzar
+  la eliminación de las horas otorgadas para el proyecto.
+\end{itemize}
+
+Riesgo 5: imposibilidad económica para continuar el posgrado.
+\begin{itemize}
+\item Severidad (10): Significaría el fin del proyecto.
+\item Ocurrencia (1): Se tienen los recursos necesarios económicos para cursar
+  los cinco bimestres.
 \end{itemize}
 
 
@@ -543,35 +552,36 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+Riesgo                                                         & S & O & RPN & S* & O* & RPN* \\ \hline
+Demoras en la adquisición del hardware                         & 4 & 7 &  28 & 1  & 7  &  7   \\ \hline
+Sin acceso al algoritmo desarrollado por modelística           &10 & 1 &  10 &    &    &      \\ \hline
+Sin acceso a una colección de datos de radar                   & 7 & 1 &   7 &    &    &      \\ \hline
+Sin horas para realizar el proyecto durante el horario laboral & 5 & 5 &  25 & 2  & 5  &  10   \\ \hline
+Imposibilidad económica para continuar el posgrado             &10 & 1 &  10 &    &    &      \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean
+mayores a 20.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+Riesgo 1: se pone a disposición del proyecto hardware que es propiedad del
+responsable del proyecto. \\
+  - Severidad (1): al disponer del hardware del responsable del proyecto se
+  elimina los efectos negativos asociados al riesgo.\\
+  - Probabilidad de ocurrencia (7): la mitigación adoptada no altera la
+  probabilidad de ocurrencia.
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
- 
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-
-\end{consigna}
-
+Riesgo 4: el responsable del proyecto planifica su agenda personal para tener a
+disposición las horas necesarias.\\
+  - Severidad (2): al disponer de horas libres en la agenda del responsable del
+  proyecto se atenúa el efecto negativo del riesgo.\\
+  - Probabilidad de ocurrencia (7): la mitigación adoptada no altera la
+  probabilidad de ocurrencia.
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
