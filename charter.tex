@@ -283,7 +283,7 @@ A continuación se detallan los valores posibles:
 A continuación se enumeran las historias de usuario:
 
 \begin{itemize}
-  \item
+  \item Historia 1
     \begin{itemize}
       \item Descripción: como arquitecto de proyectos quiero una interfaz gráfica que me permita
         evaluar el rendimiento del modelo en el sistema embebido.
@@ -292,14 +292,14 @@ A continuación se enumeran las historias de usuario:
         una página web dentro del sistema embebido. Finalmente, se debe medir el
         rendimiento del sistema.
     \end{itemize}
-  \item
+  \item Historia 2
     \begin{itemize}
       \item Descripción: como desarrollador de la \emph{Radar Computer} necesito obtener
         telemetría MQTT para actualizar el estado del radar.
       \item 4 \emph{History points}: la historia requiere conocimientos de
         programación concurrente en Python y el manejo del protocolo MQTT.
     \end{itemize}
-  \item
+  \item Historia 3
     \begin{itemize}
       \item Descripción: como desarrollador de consolas de radar quiero obtener mensajes en
         formato ASTERIX para poder representar las novedades en campo.
@@ -325,37 +325,57 @@ Los entregables del proyecto son:
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Planificación y recursos
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Creación del documento de planificación (20 hs)
+	\item Instalación del ambiente de desarrollo (15 hs)
+	\item Creación del repositorio (5 hs)
+	\item Gestión de horas (5 hs)
+	\item Obtención de un \emph{set} de datos (15 hs)
+	\item Obtención de un modelo de procesamiento (15 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Investigación
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Análisis de dependencias del modelo de procesamiento (15 hs)
+	\item Análisis del funcionamiento del modelo de procesamiento (60 hs)
+	\item Análisis del \emph{set} de datos (50 hs)
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Generador de datos
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Modelo RTL del encoder absoluto (15 hs)
+	\item Simulación, síntesis y depuración del encoder absoluto (15 hs)
+	\item Modelo RTL del generador de datos (39 hs)
+	\item Simulación, síntesis y depuración del generador de datos (15 hs)
+	\item Creación del IP Core (15 hs)
+	\item Pruebas del IP Core (25 hs)
+	\end{enumerate}
+\item Backend radar
+	\begin{enumerate}
+	\item Creación y prueba del proyecto Petalinux (5 hs)
+	\item Compilación y prueba del intérprete de Python (5 hs)
+	\item Compilación y prueba de la biblioteca ZMQ (10 hs)
+	\item Compilación y prueba de la biblioteca MQTT (5 hs)
+	\item Compilación y prueba de la biblioteca FLASK (10 hs)
+	\item Desarrollo, compilación y prueba del árbol de dispositivos (15 hs)
+	\item Desarrollo, compilación y prueba del driver del generador de datos (40 hs)
+	\item Desarrollo, compilación y prueba de la biblioteca ASTERIX (35 hs)
+	\item Integración del Backend radar (40 hs)
+	\item Pruebas de funcionamiento (20 hs)
+	\end{enumerate}
+\item Cierre
+	\begin{enumerate}
+	\item Creación del manual del generador de datos (5 hs)
+	\item Creación del manual del Backend radar (5 hs)
+	\item Creación del informe de rendimiento del sistema (30 hs)
+	\item Creación de la memoria del Trabajo Final (10 hs)
+	\item Creación de un vídeo de demostración (10 hs)
+	\item Defensa pública y agradecimientos (1 hs)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: 600 hs.
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
-
-\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -556,7 +576,7 @@ Riesgo                                                         & S & O & RPN & S
 Demoras en la adquisición del hardware                         & 4 & 7 &  28 & 1  & 7  &  7   \\ \hline
 Sin acceso al algoritmo desarrollado por modelística           &10 & 1 &  10 &    &    &      \\ \hline
 Sin acceso a una colección de datos de radar                   & 7 & 1 &   7 &    &    &      \\ \hline
-Sin horas para realizar el proyecto durante el horario laboral & 5 & 5 &  25 & 2  & 5  &  10   \\ \hline
+Sin horas para realizar el proyecto durante el horario laboral & 5 & 5 &  25 & 2  & 5  &  10  \\ \hline
 Imposibilidad económica para continuar el posgrado             &10 & 1 &  10 &    &    &      \\ \hline
 \end{tabularx}%
 \end{table}
@@ -586,38 +606,162 @@ disposición las horas necesarias.\\
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
-
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Requerimientos funcionales
+		\begin{itemize}
+      \item REQ-01: el sistema se debe implementar en un SoC de Xilinx.
+        \begin{itemize}
+          \item Verificación: se correrá el sistema en QEMU para luego ser probado
+          en la placa Arty Z7. 
+          \item Validación: se le mostrará al cliente la ejecución del sistema en
+          la placa Arty Z7.  
+        \end{itemize}
+      \item REQ-02: el sistema debe generar un flujo de datos de radar.
+        \begin{itemize}
+          \item Verificación: se realizará un \emph{script} que capture el flujo
+            de datos y los compare con los valores esperados.
+          \item Validación: se realizará un \emph{script} que envíe los datos
+            por protocolo UDP para que el cliente pueda realizar sus propias
+            pruebas.
+        \end{itemize}
+      \item REQ-03: el generador de datos debe ser un esclavo AXI en la lógica
+        programable.
+        \begin{itemize}
+          \item Verificación: se correrán las pruebas automáticas del entorno de
+            desarrollo integrado Vivado.
+          \item Validación: Se generará un \emph{IP Core} para que el cliente
+            realice sus propias pruebas.
+        \end{itemize}
+			\item REQ-04: la generación de datos debe ser configurable.
+        \begin{itemize}
+          \item Verificación: se realizará una demostración en donde se cambiará
+            la velocidad de barrido en azimut y se designarán zonas inhibidas.
+          \item Validación: el cliente entregará una serie de configuraciones
+            durante la demostración y se persistirán los resultados para que el
+            cliente decida si el generador funciona de forma correcta.
+        \end{itemize}
+			\item REQ-05: el sistema debe procesar los datos y generar mensajes
+        ASTERIX.
+        \begin{itemize}
+          \item Verificación: se usará un programa del tipo \emph{parser} que
+            determina si el protocolo se usó de forma correcta.
+          \item Validación: se entregará una captura de mensajes ASTERIX al
+            cliente.
+        \end{itemize}
+      \item REQ-06: el procesador de datos se debe implementar en Python dentro de la
+        Unidad de procesamiento de aplicaciones.
+        \begin{itemize}
+          \item Verificación: se relevará la proporción de lenguajes en la
+            aplicación.
+          \item Validación: se realizará un control de versiones en un
+            repositorio dentro de la infraestructura de INVAP S.E.
+        \end{itemize}
+      \item REQ-07: el procesador debe correr como servicio dentro del sistema
+        operativo.
+        \begin{itemize}
+          \item Verificación: se realizará un \emph{boot} del \emph{kernel} y se
+            mostrará el mensaje del sistema operativo que muestra el inicio del
+            servicio.
+          \item Validación: con el sistema operativo funcionando se pedirá la
+            lista de procesos y debe figurar el servicio.
+        \end{itemize}
+      \item REQ-08: se debe crear una distribución de Linux embebido.
+        \begin{itemize}
+          \item Verificación: se realizará una demostración de \emph{boot} de la
+            distribución.
+          \item Validación: el proyecto Petalinux estará en un repositorio
+            dentro de la infraestructura de INVAP S.E.
+        \end{itemize}
+			\item REQ-09: los mensajes ASTERIX se deben transmitir por protocolo ZMQ.
+        \begin{itemize}
+          \item Verificación: se usará un cliente ZMQ para recibir los datos.
+          \item Validación: se realizará una demostración de la captura de datos
+            en ZMQ.
+        \end{itemize}
+			\item REQ-10: el sistema debe generar datos de telemetría que indiquen su estado
+        de funcionamiento.
+        \begin{itemize}
+          \item Verificación: se inducirán fallas en el sistema y se deberán
+            reflejar en la telemetría.
+          \item Validación: se repetirá el ensayo de verificación pero el
+            cliente será quién decida que componentes se pondrán en falla.
+        \end{itemize}
+			\item REQ-11: la telemetría se debe trasmitir por protocolo MQTT.
+        \begin{itemize}
+          \item Verificación: se usará un cliente MQTT para capturar la
+            telemetría.
+          \item Validación: se repetirá la prueba de verificación en presencia
+            del cliente.
+        \end{itemize}
+			\item REQ-12: el sistema debe presentar una interfaz web para ajustar la
+        configuración.
+        \begin{itemize}
+          \item Verificación: se realizarán cambios desde la interfaz web y se
+            verá el impacto en el archivo de configuración.
+          \item Validación: se realizarán cambios desde la interfaz web y se
+            verá el cambio de comportamiento en el sistema.
+        \end{itemize}
+      \item REQ-13: se debe poder visualizar los mensajes ASTERIX y de
+        telemetría.
+        \begin{itemize}
+          \item Verificación: se generarán mensajes de pruebas en ASTERIX y MQTT
+            y se medirá su impacto en la interfaz gráfica.
+          \item Validación: se pondrá el sistema en funcionamiento y se medirá
+            su impacto en la interfaz gráfica.
+        \end{itemize}
+		\end{itemize}
+	\item Requerimientos de documentación
+		\begin{itemize}
+      \item REQ-14: se debe generar un informe de rendimiento del procesador de
+        datos implementado.
+        \begin{itemize}
+          \item Verificación: se cambiará la velocidad de giro del generador de
+            datos y se estudiará cuantos paquetes se pierde en cada caso.
+          \item Validación: se conectará el sistema a una consola de radar y se
+            probarán distintas configuraciones del generador de datos.
+        \end{itemize}
+      \item REQ-15: se debe crear un manual de uso para el esclavo AXI.
+        \begin{itemize}
+          \item Verificación: se creará un proyecto nuevo y se seguirán los
+            pasos especificados en el manual, el resultado debe ser una
+            aplicación de ejemplo que funcione.
+          \item Validación: el cliente realizará una revisión del documento.
+        \end{itemize}
+      \item REQ-16: se debe crear un manual de uso para el servicio procesador de datos.
+        \begin{itemize}
+          \item Verificación: se creará un proyecto nuevo y se seguirán los
+          pasos especificados en el manual, el resultado debe ser una
+          aplicación de ejemplo que funcione.
+          \item Validación: el cliente realizará una revisión del documento.
+        \end{itemize}
+      \end{itemize}
+    \item REQ-17: se debe proveer una interfaz web para supervisar y configurar el sistema.
+      \begin{itemize}
+        \item Verificación: se realizará un \emph{log} de los pedidos
+          provenientes de la interfaz web para analizar su correcto funcionamiento.
+        \item Validación: el cliente probará la interfaz web y dará sus correcciones.
+      \end{itemize}
 \end{itemize}
-
-\end{itemize}
-
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
-
-\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
 Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
 \begin{itemize}
 	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+        \begin{itemize}
+            \item El responsable del proyecto analizará el plan original y se verificará el grado de correspondencia con su ejecución.
+            \item El responsable del proyecto evaluará las tareas que no se ajustaron al plan para detectar las causas y tenerlas en cuentas en próximos proyectos.
+	    \end{itemize}
+
+    \item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+	    \begin{itemize}
+            \item El responsable del proyecto evaluará el rendimiento del
+              lenguaje de programación Python en un backend radar.
+            \item El responsable del proyecto generará informes con todos los problemas técnicos no previstos.
+        \end{itemize}
+	\item Luego de la presentación del trabajo ante el jurado, el responsable del proyecto realizará un agradecimiento público a todas las personas involucradas en el proyecto. 
 \end{itemize}
-
-\end{consigna}
-
 
 \end{document}
