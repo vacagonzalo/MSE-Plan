@@ -7,7 +7,8 @@
 \typeout{\fileversion}
 \typeout{Creado por Patricio Bos para el Laboratorio de Sistemas Embebidos de FIUBA}
 \typeout{\filedate}
-\typeout{Una clase para armar planificaciones de Trabajos finales en el curso de Gestión de Proyectos.}
+\typeout{Una clase para armar planificaciones de Trabajos finales en el curso de
+  Gestión de la tecnología y la innovación.}
 
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
@@ -208,7 +209,7 @@
 	
     \vfill
     \centering
-    \textit{Esta planificación fue realizada en el curso de Gestión de proyectos\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
+    \textit{Esta planificación fue realizada en el curso de Gestión de la tecnología y la innovación\\ entre el \fechaInicioName \hspace{1px} y el  \fechaFinalPlanName.}
 		
 	\pagebreak
   }
