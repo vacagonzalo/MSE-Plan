@@ -71,11 +71,6 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0        & Creación del documento                                 & 29/06/2022 \\ \hline
 1        & Se completa el documento salvo el diagrama de GANTT    & 10/07/2022 \\ \hline
 2        & Se agrega el diagrama de GANTT                         & 17/07/2022 \\ \hline
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
-%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
-%4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
 \end{table}
 
@@ -387,61 +382,314 @@ Cantidad total de horas: 600 hs.
 \label{fig:AoN}
 \end{figure}
 
+
+\begin{landscape}
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
-\begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+A partir del diagrama en \emph{Activity On Node} de la sección \ref{sec:AoN} se
+creó un diagrama de Gantt. Se lo puede observar en las figuras \ref{fig:gantt1},
+\ref{fig:gantt2}, \ref{fig:gantt3}, \ref{fig:gantt4}, \ref{fig:gantt5},
+\ref{fig:gantt6} y \ref{fig:gantt7}.
 
 \begin{figure}[htbp]
 \begin{center}
-\begin{ganttchart}{1}{12}
-  \gantttitle{2020}{12} \\
-  \gantttitlelist{1,...,12}{1} \\
-  \ganttgroup{Group 1}{1}{7} \\
-  \ganttbar{Task 1}{1}{2} \\
-  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
-  \ganttmilestone{Milestone o hito}{7} \ganttnewline
-  \ganttbar{Final Task}{8}{12}
+\newgantttimeslotformat{stardate}{%
+	\def\decomposestardate##1.##2\relax{%
+		\def\stardateyear{##1}\def\stardateday{##2}%
+	}%
+\decomposestardate#1\relax%
+\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+\advance#2 by-1\relax%
+\advance#2 by\stardateday\relax%
+}
+\begin{ganttchart}[
+	hgrid,
+	vgrid,
+	time slot format=stardate
+	]{2022.179}{2022.215}
+	\gantttitlecalendar{year, month=name, day} \\
+  \ganttgroup{1 PLANIFICACIÓN}{2022.180}{2022.214} \\
+  \ganttbar{1.1 Documento de planificación}{2022.180}{2022.188} \ganttnewline
+  \ganttbar{1.2 Ambiente de desarrollo}{2022.188}{2022.195} \ganttnewline
+  \ganttbar{1.3 Creación del repositorio}{2022.195}{2022.199} \ganttnewline
+  \ganttbar{1.4 Gestión de horas}{2022.199}{2022.200} \ganttnewline
+  \ganttbar{1.5 Obtención de un \emph{set} de datos}{2022.201}{2022.207} \ganttnewline
+  \ganttbar{1.6 Obtención del procesador}{2022.208}{2022.214}
+  \ganttlink{elem1}{elem2}
   \ganttlink{elem2}{elem3}
   \ganttlink{elem3}{elem4}
+  \ganttlink{elem4}{elem5}
+  \ganttlink{elem5}{elem6}
 \end{ganttchart}
 \end{center}
-\caption{Diagrama de gantt de ejemplo}
-\label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
-\begin{figure}[htpb]
-\centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt rotado}
-\label{fig:diagGantt}
+\caption{Diagrama de Gantt: parte 1.}
+\label{fig:gantt1}
 \end{figure}
 
 \end{landscape}
 
-\end{consigna}
+\begin{landscape}
+\begin{figure}[htbp]
+	\begin{center}
+		\newgantttimeslotformat{stardate}{%
+			\def\decomposestardate##1.##2\relax{%
+				\def\stardateyear{##1}\def\stardateday{##2}%
+			}%
+			\decomposestardate#1\relax%
+			\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+			\advance#2 by-1\relax%
+			\advance#2 by\stardateday\relax%
+		}
+		\begin{ganttchart}[
+			hgrid,
+			vgrid,
+			time slot format=stardate
+			]{2022.214}{2022.252}
+			\gantttitlecalendar{year, month=name, day} \\
+			\ganttgroup{2 INVESTIGACIÓN}{2022.215}{2022.252} \\
+			\ganttbar{2.1 Análisis de dependencias}{2022.215}{2022.221} \ganttnewline
+			\ganttbar{2.2 Análisis de funcionamiento}{2022.222}{2022.249} \ganttnewline
+			\ganttbar{2.3 Análisis del \emph{set} de datos}{2022.250}{2022.252}
+			\ganttlink{elem1}{elem2}
+			\ganttlink{elem2}{elem3}
+		\end{ganttchart}
+	\end{center}
+	\caption{Diagrama de gantt: parte 2.}
+	\label{fig:gantt2}
+\end{figure}
+\end{landscape}
 
+\begin{landscape}
+	
+	\begin{figure}[htbp]
+		\begin{center}
+			\newgantttimeslotformat{stardate}{%
+				\def\decomposestardate##1.##2\relax{%
+					\def\stardateyear{##1}\def\stardateday{##2}%
+				}%
+				\decomposestardate#1\relax%
+				\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+				\advance#2 by-1\relax%
+				\advance#2 by\stardateday\relax%
+			}
+			\begin{ganttchart}[
+				hgrid,
+				vgrid,
+				time slot format=stardate
+				]{2022.270}{2022.308}
+				\gantttitlecalendar{year, month=name, day} \\
+				\ganttgroup{2 INVESTIGACIÓN}{2022.270}{2022.272} \\
+				\ganttbar{2.3 Análisis del \emph{set} de datos}{2022.270}{2022.272} \ganttnewline
+				\ganttgroup{3 GENERADOR}{2022.273}{2022.308} \\
+				\ganttbar{3.1 Modelo RTL del encoder}{2022.273}{2022.279} \ganttnewline
+				\ganttbar{3.2 Validación del encoder}{2022.280}{2022.286} \ganttnewline
+				\ganttbar{3.3 Modelo RTL del generador}{2022.287}{2022.305} \ganttnewline
+				\ganttbar{3.4 Validación del generador}{2022.306}{2022.308}
+				%\ganttbar{3.5 Creación del IP Core}{2022.313}{2022.319} \ganttnewline
+				%\ganttbar{3.6 Pruebas del IP Core}{2022.320}{2022.329}
+				\ganttlink{elem1}{elem3}
+				\ganttlink{elem3}{elem4}
+				\ganttlink{elem4}{elem5}
+				\ganttlink{elem5}{elem6}
+				%\ganttlink{elem6}{elem7}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de gantt: parte 3.}
+		\label{fig:gantt3}
+	\end{figure}
+	
+\end{landscape}
+
+\begin{landscape}
+	
+	\begin{figure}[htbp]
+		\begin{center}
+			\newgantttimeslotformat{stardate}{%
+				\def\decomposestardate##1.##2\relax{%
+					\def\stardateyear{##1}\def\stardateday{##2}%
+				}%
+				\decomposestardate#1\relax%
+				\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+				\advance#2 by-1\relax%
+				\advance#2 by\stardateday\relax%
+			}
+			\begin{ganttchart}[
+				hgrid,
+				vgrid,
+				time slot format=stardate
+				]{2022.310}{2022.348}
+				\gantttitlecalendar{year, month=name, day} \\
+
+				\ganttgroup{3 GENERADOR}{2022.310}{2022.329} \\
+				\ganttbar{3.4 Validación del generador}{2022.310}{2022.312} \ganttnewline
+				\ganttbar{3.5 Creación del IP Core}{2022.313}{2022.319} \ganttnewline
+				\ganttbar{3.6 Pruebas del IP Core}{2022.320}{2022.329} \ganttnewline
+
+				\ganttgroup{4 BACKEND RADAR}{2022.332}{2022.348} \\
+				\ganttbar{4.1 Proyecto Petalinux}{2022.332}{2022.333} \ganttnewline
+				\ganttbar{4.2 Intérprete Python}{2022.333}{2022.335} \ganttnewline
+				\ganttbar{4.3 Biblioteca ZMQ}{2022.335}{2022.340} \ganttnewline
+				\ganttbar{4.4 Biblioteca MQTT}{2022.340}{2022.342} \ganttnewline
+				\ganttbar{4.5 Biblioteca FLASK}{2022.342}{2022.347} \ganttnewline
+				\ganttbar{4.6 Árbol de dispositivos}{2022.347}{2022.348}
+				%\ganttbar{4.7 Driver del generador}{2022.354}{2023.6} \ganttnewline
+				%\ganttbar{4.8 Biblioteca ASTERIX}{2023.9}{2023.24} \ganttnewline
+				%\ganttbar{4.9 Integración backend}{2023.24}{2023.41} \ganttnewline
+				%\ganttbar{4.10 Pruebas de funcionamiento}{2023.44}{2023.52} \ganttnewline
+
+				\ganttlink{elem1}{elem2}
+				\ganttlink{elem2}{elem3}
+				\ganttlink{elem3}{elem5}
+				\ganttlink{elem5}{elem6}
+				\ganttlink{elem6}{elem7}
+				\ganttlink{elem7}{elem8}
+				\ganttlink{elem8}{elem9}
+				\ganttlink{elem9}{elem10}
+				%\ganttlink{elem10}{elem11}
+				%\ganttlink{elem11}{elem12}
+				%\ganttlink{elem12}{elem13}
+				%\ganttlink{elem13}{elem14}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de gantt: parte 4.}
+		\label{fig:gantt4}
+	\end{figure}
+	
+\end{landscape}
+
+\begin{landscape}
+	
+	\begin{figure}[htbp]
+		\begin{center}
+			\newgantttimeslotformat{stardate}{%
+				\def\decomposestardate##1.##2\relax{%
+					\def\stardateyear{##1}\def\stardateday{##2}%
+				}%
+				\decomposestardate#1\relax%
+				\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+				\advance#2 by-1\relax%
+				\advance#2 by\stardateday\relax%
+			}
+			\begin{ganttchart}[
+				hgrid,
+				vgrid,
+				time slot format=stardate
+				]{2022.353}{2023.25}
+				\gantttitlecalendar{year, month=name, day} \\
+				\ganttgroup{4 BACKEND RADAR}{2022.353}{2023.25} \\
+				\ganttbar{4.6 Árbol de dispositivos}{2022.353}{2022.354} \ganttnewline
+				\ganttbar{4.7 Driver del generador}{2022.354}{2023.6} \ganttnewline
+				\ganttbar{4.8 Biblioteca ASTERIX}{2023.9}{2023.24} \ganttnewline
+				\ganttbar{4.9 Integración backend}{2023.24}{2023.25} \ganttnewline
+				%\ganttbar{4.10 Pruebas de funcionamiento}{2023.44}{2023.52} \ganttnewline
+
+				%\ganttgroup{5 CIERRE}{2023.52}{2023.136} \\
+				%\ganttbar{5.1 Manual del generador}{2023.52}{2023.54} \ganttnewline
+				%\ganttbar{5.2 Manual del backend}{2023.54}{2023.55} \ganttnewline
+				%\ganttbar{5.3 Informe de rendimiento}{2023.58}{2023.69} \ganttnewline
+				%\ganttbar{5.4 Memoria del Trabajo Final}{2023.72}{2023.75} \ganttnewline
+				%\ganttbar{5.5 Vídeo de demostración}{2023.75}{2023.80} \ganttnewline
+				%\ganttbar{5.6 Defensa pública}{2023.135}{2023.136} \ganttnewline
+				%\ganttmilestone{FIN}{2023.136}
+
+				\ganttlink{elem1}{elem2}
+				\ganttlink{elem2}{elem3}
+				\ganttlink{elem3}{elem4}
+				%\ganttlink{elem4}{elem5}
+				%\ganttlink{elem5}{elem7}
+				%\ganttlink{elem7}{elem8}
+				%\ganttlink{elem8}{elem9}
+				%\ganttlink{elem9}{elem10}
+				%\ganttlink{elem10}{elem11}
+				%\ganttlink{elem11}{elem12}
+				%\ganttlink{elem12}{elem13}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de gantt: parte 5.}
+		\label{fig:gantt5}
+	\end{figure}
+	
+\end{landscape}
+
+\begin{landscape}
+	
+	\begin{figure}[htbp]
+		\begin{center}
+			\newgantttimeslotformat{stardate}{%
+				\def\decomposestardate##1.##2\relax{%
+					\def\stardateyear{##1}\def\stardateday{##2}%
+				}%
+				\decomposestardate#1\relax%
+				\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+				\advance#2 by-1\relax%
+				\advance#2 by\stardateday\relax%
+			}
+			\begin{ganttchart}[
+				hgrid,
+				vgrid,
+				time slot format=stardate
+				]{2023.40}{2023.78}
+				\gantttitlecalendar{year, month=name, day} \\
+				\ganttgroup{4 BACKEND RADAR}{2023.40}{2023.52} \\
+				\ganttbar{4.9 Integración backend}{2023.40}{2023.41} \ganttnewline
+				\ganttbar{4.10 Pruebas de funcionamiento}{2023.44}{2023.52} \ganttnewline
+
+				\ganttgroup{5 CIERRE}{2023.52}{2023.78} \\
+				\ganttbar{5.1 Manual del generador}{2023.52}{2023.54} \ganttnewline
+				\ganttbar{5.2 Manual del backend}{2023.54}{2023.55} \ganttnewline
+				\ganttbar{5.3 Informe de rendimiento}{2023.58}{2023.69} \ganttnewline
+				\ganttbar{5.4 Memoria del Trabajo Final}{2023.72}{2023.75} \ganttnewline
+				\ganttbar{5.5 Vídeo de demostración}{2023.75}{2023.78} \ganttnewline
+				%\ganttbar{5.6 Defensa pública}{2023.135}{2023.136} \ganttnewline
+				%\ganttmilestone{FIN}{2023.136}
+				\ganttlink{elem1}{elem2}
+				\ganttlink{elem2}{elem4}
+				\ganttlink{elem4}{elem5}
+				\ganttlink{elem5}{elem6}
+				\ganttlink{elem6}{elem7}
+				\ganttlink{elem7}{elem8}
+				%\ganttlink{elem8}{elem9}
+				%\ganttlink{elem9}{elem10}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de gantt: parte 6.}
+		\label{fig:gantt6}
+	\end{figure}
+	
+\end{landscape}
+
+\begin{landscape}
+	
+	\begin{figure}[htbp]
+		\begin{center}
+			\newgantttimeslotformat{stardate}{%
+				\def\decomposestardate##1.##2\relax{%
+					\def\stardateyear{##1}\def\stardateday{##2}%
+				}%
+				\decomposestardate#1\relax%
+				\pgfcalendardatetojulian{\stardateyear-01-01}{#2}%
+				\advance#2 by-1\relax%
+				\advance#2 by\stardateday\relax%
+			}
+			\begin{ganttchart}[
+				hgrid,
+				vgrid,
+				time slot format=stardate
+				]{2023.110}{2023.150}
+				\gantttitlecalendar{year, month=name, day} \\
+				\ganttgroup{5 CIERRE}{2023.110}{2023.136} \\
+				\ganttbar{5.6 Defensa pública}{2023.135}{2023.136} \ganttnewline
+				\ganttmilestone{FIN}{2023.136}
+
+				\ganttlink{elem1}{elem2}
+			\end{ganttchart}
+		\end{center}
+		\caption{Diagrama de gantt: parte 7.}
+		\label{fig:gantt7}
+	\end{figure}
+	
+\end{landscape}
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
